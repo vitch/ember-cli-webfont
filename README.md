@@ -2,6 +2,14 @@
 
 This addon wraps [broccoli-webfont](https://github.com/sunflowerdeath/broccoli-webfont) to allow you to easily generate webfonts as part of your ember build process.
 
+## Installation
+
+(pending npm release once things work properly)
+
+```js
+ember install ember-cli-webfont
+```
+
 ## Usage
 
 By default the addon expects to find your SVG files in `app/webfont/svg` and will generate `app/styles/webfont.scss` which you can include in your `app.scss`. Icons will be named based on the filenames of the loaded SVG files.
