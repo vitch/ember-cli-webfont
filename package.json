@@ -42,8 +42,10 @@
     "icons"
   ],
   "dependencies": {
+    "broccoli-merge-trees": "^0.2.1",
     "broccoli-webfont": "^0.2.2",
-    "ember-cli-babel": "^5.0.0"
+    "ember-cli-babel": "^5.0.0",
+    "merge": "^1.2.0"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
