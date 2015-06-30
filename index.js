@@ -2,7 +2,6 @@
 'use strict';
 
 var merge = require('merge');
-var mergeTrees = require('broccoli-merge-trees');
 var webfont = require('broccoli-webfont');
 
 module.exports = {
@@ -12,8 +11,8 @@ module.exports = {
     var webfontOptions = this.app.options.webfont || {};
     return merge(true, {}, {
       files: ['**/*.svg'],
-      dest: 'public/webfonts/',
-      cssDest: 'app/styles/webfont.scss',
+      dest: 'webfonts/',
+      cssDest: 'webfont.scss',
       fontName: 'iconfont',
       cssFontsPath: 'webfonts/',
       cssTemplate: webfont.templates.scss,
@@ -24,10 +23,10 @@ module.exports = {
     }, webfontOptions.options || {});
   },
 
-  treeForApp: function(tree) {
+  treeForPublic: function() {
     var path = this.app.options.webfont.path || 'app/webfont/svg';
     var options = this.options();
     var fontTree = webfont(path, options);
-    return mergeTrees([tree, fontTree]);
+    return fontTree;
   }
 };

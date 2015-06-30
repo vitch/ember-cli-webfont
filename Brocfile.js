@@ -15,8 +15,8 @@ var app = new EmberAddon({
   webfont: {
     path: 'tests/dummy/app/webfont/svg/',
     options: {
-      dest: 'dummy/public/webfonts/',
-      fontName: 'ember-cli-webfont'
+      fontName: 'ember-cli-webfont',
+      types: ['eot', 'woff', 'ttf', 'svg']
     }
   }
 });
