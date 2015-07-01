@@ -44,7 +44,15 @@ module.exports = {
       include: [new RegExp(/\.css$/)]
     });
 
-    return mergeTrees(['vendor/', cssTree], { overwrite: true });
+    // Nasty way to deal with an error when there is no SVG files in the specified path
+    // We merge with an empty CSS file so there isn't an error when we `app.import`
+    // But I can't find a path which doesn't change dependent on whether you are developing
+    // the addon or your app.
+    var watchDir = 'vendor/';
+    if (!this.isDevelopingAddon()) {
+      watchDir = 'node_modules/ember-cli-webfont/' + watchDir;
+    }
+    return mergeTrees([watchDir, cssTree], { overwrite: true });
   },
 
   treeForPublic: function() {
