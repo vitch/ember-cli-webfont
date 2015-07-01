@@ -3,6 +3,7 @@
 
 var Funnel = require('broccoli-funnel');
 var merge = require('merge');
+var mergeTrees  = require('broccoli-merge-trees');
 var webfont = require('broccoli-webfont');
 
 module.exports = {
@@ -34,15 +35,16 @@ module.exports = {
   treeForStyles: function() {
     var path = this.webfontPath();
     var options = merge(true, {
-        css:true,
+        css: true,
         cssDest: 'temp/ember-cli-webfont.css'
       }, this.options());
     var cssTree = webfont(path, options);
+
     cssTree = new Funnel(cssTree, {
       include: [new RegExp(/\.css$/)]
     });
 
-    return cssTree;
+    return mergeTrees(['vendor/', cssTree], { overwrite: true });
   },
 
   treeForPublic: function() {
