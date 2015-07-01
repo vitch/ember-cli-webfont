@@ -23,8 +23,16 @@ module.exports = {
     }, webfontOptions.options || {});
   },
 
+  webfontPath: function() {
+    var path = 'app/webfont/svg';
+    if (this.app.options.webfont && this.app.options.webfont.path) {
+      path = this.app.options.webfont.path;
+    }
+    return path;
+  },
+
   treeForStyles: function() {
-    var path = this.app.options.webfont.path || 'app/webfont/svg';
+    var path = this.webfontPath();
     var options = merge(true, {
         css:true,
         cssDest: 'temp/ember-cli-webfont.css'
@@ -38,7 +46,7 @@ module.exports = {
   },
 
   treeForPublic: function() {
-    var path = this.app.options.webfont.path || 'app/webfont/svg';
+    var path = this.webfontPath();
     var options = merge(true, { css:false }, this.options());
     var fontTree = webfont(path, options);
     return fontTree;
