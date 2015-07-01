@@ -1,10 +1,8 @@
-# Ember-cli-webfont
+# ember-cli-webfont
 
 This addon wraps [broccoli-webfont](https://github.com/sunflowerdeath/broccoli-webfont) to allow you to easily generate webfonts as part of your ember build process.
 
 ## Installation
-
-(pending npm release once things work properly)
 
 ```js
 ember install ember-cli-webfont
