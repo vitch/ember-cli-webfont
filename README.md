@@ -30,7 +30,7 @@ var app = new EmberApp({
       cssTemplate: webfont.templates.css,
       templateOptions: {
         classPrefix: 'iconfont-',
-        baseclass: 'iconfont'
+        baseClass: 'iconfont'
       }
     }
   }

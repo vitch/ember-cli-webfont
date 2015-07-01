@@ -18,7 +18,7 @@ module.exports = {
       cssTemplate: webfont.templates.css,
       templateOptions: {
         classPrefix: 'iconfont-',
-        baseclass: 'iconfont'
+        baseClass: 'iconfont'
       }
     }, webfontOptions.options || {});
   },
