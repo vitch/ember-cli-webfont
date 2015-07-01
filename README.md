@@ -24,11 +24,10 @@ var app = new EmberApp({
     path: 'app/webfont/svg/',
     options: {
       files: ['**/*.svg'],
-      dest: 'public/webfonts/',
-      cssDest: 'app/styles/webfont.scss',
+      dest: 'assets/webfonts/',
       fontName: 'iconfont',
       cssFontsPath: 'webfonts/',
-      cssTemplate: webfont.templates.scss,
+      cssTemplate: webfont.templates.css,
       templateOptions: {
         classPrefix: 'iconfont-',
         baseclass: 'iconfont'

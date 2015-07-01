@@ -42,6 +42,7 @@
     "icons"
   ],
   "dependencies": {
+    "broccoli-funnel": "^0.2.3",
     "broccoli-webfont": "^0.2.2",
     "ember-cli-babel": "^5.0.0",
     "merge": "^1.2.0"
