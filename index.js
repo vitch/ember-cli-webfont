@@ -48,11 +48,11 @@ module.exports = {
     // We merge with an empty CSS file so there isn't an error when we `app.import`
     // But I can't find a path which doesn't change dependent on whether you are developing
     // the addon or your app.
-    var watchDir = 'vendor/';
+    var dummyWatchDir = 'vendor/';
     if (!this.isDevelopingAddon()) {
-      watchDir = 'node_modules/ember-cli-webfont/' + watchDir;
+      dummyWatchDir = 'node_modules/ember-cli-webfont/' + dummyWatchDir;
     }
-    return mergeTrees([watchDir, cssTree], { overwrite: true });
+    return mergeTrees([dummyWatchDir, cssTree], { overwrite: true });
   },
 
   treeForPublic: function() {
