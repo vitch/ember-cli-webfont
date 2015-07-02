@@ -13,7 +13,7 @@ var EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
 var app = new EmberAddon({
   webfont: {
-    path: 'tests/dummy/app/webfont/svg/'
+    path: 'tests/dummy/app/webfont-svg/'
   }
 });
 

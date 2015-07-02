@@ -25,7 +25,7 @@ module.exports = {
   },
 
   webfontPath: function() {
-    var path = 'app/webfont/svg';
+    var path = 'app/webfont-svg';
     if (this.app.options.webfont && this.app.options.webfont.path) {
       path = this.app.options.webfont.path;
     }

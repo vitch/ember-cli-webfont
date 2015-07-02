@@ -27,7 +27,7 @@ You can configure the behaviour of the addon by passing a hash of options when i
 ```js
 var app = new EmberApp({
   webfont: {
-    path: 'app/webfont/svg/',
+    path: 'app/webfont-svg/',
     options: {
       files: ['**/*.svg'],
       dest: 'assets/webfonts/',
