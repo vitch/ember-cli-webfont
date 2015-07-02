@@ -2,8 +2,8 @@
 'use strict';
 
 var Funnel = require('broccoli-funnel');
+var glob = require('glob');
 var merge = require('merge');
-var mergeTrees  = require('broccoli-merge-trees');
 var webfont = require('broccoli-webfont');
 
 module.exports = {
@@ -24,6 +24,16 @@ module.exports = {
     }, webfontOptions.options || {});
   },
 
+  // Seems a bit expensive but can't figure out how to do this the "broccoli way"
+  // So that we can guard the various calls below to not fail when directory is
+  // missing or empty
+  hasSvgs: function() {
+    var path = this.webfontPath();
+    return this.options().files.some(function(pattern) {
+      return glob.sync(pattern, { cwd: path }).length > 0;
+    });
+  },
+
   webfontPath: function() {
     var path = 'app/webfont/svg';
     if (this.app.options.webfont && this.app.options.webfont.path) {
@@ -33,26 +43,18 @@ module.exports = {
   },
 
   treeForStyles: function() {
-    var path = this.webfontPath();
-    var options = merge(true, {
-        css: true,
-        cssDest: 'temp/ember-cli-webfont.css'
-      }, this.options());
-    var cssTree = webfont(path, options);
-
-    cssTree = new Funnel(cssTree, {
-      include: [new RegExp(/\.css$/)]
-    });
-
-    // Nasty way to deal with an error when there is no SVG files in the specified path
-    // We merge with an empty CSS file so there isn't an error when we `app.import`
-    // But I can't find a path which doesn't change dependent on whether you are developing
-    // the addon or your app.
-    var watchDir = 'vendor/';
-    if (!this.isDevelopingAddon()) {
-      watchDir = 'node_modules/ember-cli-webfont/' + watchDir;
+    if (this.hasSvgs()) {
+      var path = this.webfontPath();
+      var options = merge(true, {
+          css: true,
+          cssDest: 'temp/ember-cli-webfont.css'
+        }, this.options());
+      var cssTree = webfont(path, options);
+      cssTree = new Funnel(cssTree, {
+        include: [new RegExp(/\.css$/)]
+      });
+      return cssTree;
     }
-    return mergeTrees([watchDir, cssTree], { overwrite: true });
   },
 
   treeForPublic: function() {
@@ -64,6 +66,8 @@ module.exports = {
 
   included: function(app) {
     this._super.included(app);
-    app.import('temp/ember-cli-webfont.css');
+    if (this.hasSvgs()) {
+      app.import('temp/ember-cli-webfont.css');
+    }
   }
 };
