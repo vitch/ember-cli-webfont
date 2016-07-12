@@ -10,7 +10,7 @@ ember install ember-cli-webfont
 
 ## Usage
 
-By default the addon expects to find your SVG files in `app/webfont/svg` and will add CSS classes to your generated CSS.
+By default the addon expects to find your SVG files in `app/webfont-svg` and will add CSS classes to your generated CSS.
 
 To use the icons you just need to give an element these classes e.g.
 
@@ -18,7 +18,7 @@ To use the icons you just need to give an element these classes e.g.
 <span class="iconfont iconfont-ember"></span>
 ```
 
-Will display the SVG from `app/webfont/svg/ember.svg` (with the defaul values for `path`, `classPrefix` and `baseClass` - see below).
+Will display the SVG from `app/webfont-svg/ember.svg` (with the defaul values for `path`, `classPrefix` and `baseClass` - see below).
 
 ## Configuration
 
