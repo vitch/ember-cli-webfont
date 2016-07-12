@@ -18,7 +18,7 @@ To use the icons you just need to give an element these classes e.g.
 <span class="iconfont iconfont-ember"></span>
 ```
 
-Will display the SVG from `app/webfont-svg/ember.svg` (with the defaul values for `path`, `classPrefix` and `baseClass` - see below).
+Will display the SVG from `app/webfont-svg/ember.svg` (with the default values for `path`, `classPrefix` and `baseClass` - see below).
 
 ## Configuration
 
