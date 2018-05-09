@@ -14,11 +14,11 @@ module.exports = {
       files: ['**/*.svg'],
       dest: 'assets/webfonts/',
       fontName: 'iconfont',
-      cssFontsPath: 'webfonts/',
+      cssFontsUrl: 'webfonts/',
       cssTemplate: webfont.templates.css,
       templateOptions: {
         classPrefix: 'iconfont-',
-        baseClass: 'iconfont'
+        baseSelector: 'iconfont'
       }
     }, webfontOptions.options || {});
   },
