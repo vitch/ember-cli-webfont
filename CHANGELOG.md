@@ -2,6 +2,10 @@
 
 ## Master
 
+## v0.0.5 2017-05-23
+ 
+ * Update `ember-cli` version and related changes from `ember init`
+
 ## v0.0.4 2017-03-21
  
  * Allow use within an ember engine
