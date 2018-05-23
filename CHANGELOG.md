@@ -2,6 +2,10 @@
 
 ## Master
 
+## v0.0.4 2017-03-21
+ 
+ * Allow use within an ember engine
+
 ## v0.0.3 2015-07-02
 
  * The default addon blueprint now generates the folder that it expects the SVG files to live in and prevents a "Attempting to watch missing directory" error
