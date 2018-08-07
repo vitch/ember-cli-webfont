@@ -2,8 +2,8 @@
 
 var Funnel = require('broccoli-funnel');
 var merge = require('merge');
-var mergeTrees  = require('broccoli-merge-trees');
-var webfont = require('broccoli-webfont');
+var MergeTrees = require('broccoli-merge-trees');
+var Webfont = require('./utils/webfont');
 
 module.exports = {
   name: 'ember-cli-webfont',
@@ -15,7 +15,7 @@ module.exports = {
       dest: 'assets/webfonts/',
       fontName: 'iconfont',
       cssFontsUrl: 'webfonts/',
-      cssTemplate: webfont.templates.css,
+      cssTemplate: Webfont.templates.css,
       templateOptions: {
         classPrefix: 'iconfont-',
         baseSelector: 'iconfont'
@@ -32,14 +32,13 @@ module.exports = {
   },
 
   treeForStyles: function() {
-    var path = this.webfontPath();
+    const path = new Funnel(this.webfontPath(), { include: this.options().files });
     var options = merge(true, {
         css: true,
         cssDest: 'temp/ember-cli-webfont.css'
       }, this.options());
-    var cssTree = webfont(path, options);
-
-    cssTree = new Funnel(cssTree, {
+    const webfont = new Webfont([path], options);
+    const cssTree = new Funnel(webfont, {
       include: [new RegExp(/\.css$/)]
     });
 
@@ -51,14 +50,15 @@ module.exports = {
     if (!this.isDevelopingAddon()) {
       dummyWatchDir = 'node_modules/ember-cli-webfont/' + dummyWatchDir;
     }
-    return mergeTrees([dummyWatchDir, cssTree], { overwrite: true });
+    return new MergeTrees([dummyWatchDir, cssTree], { overwrite: true });
   },
 
   treeForPublic: function() {
-    var path = this.webfontPath();
-    var options = merge(true, { css:false }, this.options());
-    var fontTree = webfont(path, options);
-    return fontTree;
+    const path = new Funnel(this.webfontPath(), { include: this.options().files });
+    const options = merge(true, { css: false }, this.options());
+    const webfont = new Webfont([path], options);
+
+    return webfont;
   },
 
   included: function(app) {

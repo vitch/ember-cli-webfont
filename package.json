@@ -15,7 +15,7 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "https://github.com/lightspeedgraphics/ember-cli-webfont.git",
+  "repository": "https://github.com/vitch/ember-cli-webfont.git",
   "scripts": {
     "build": "ember build",
     "lint:js": "eslint ./*.js addon addon-test-support app config lib server test-support tests",
@@ -24,16 +24,20 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
-    "broccoli-funnel": "^1.0.0",
-    "broccoli-merge-trees": "^1.0.0",
-    "broccoli-webfont": "https://github.com/lightspeedgraphics/broccoli-webfont.git",
+    "broccoli": "1.1.4",
+    "broccoli-caching-writer": "^3.0.3",
+    "broccoli-funnel": "^2.0.1",
+    "broccoli-merge-trees": "^3.0.0",
+    "dirmatch": "^0.1.2",
     "ember-cli-babel": "^6.6.0",
-    "merge": "^1.2.0"
+    "merge": "^1.2.0",
+    "underscore": "^1.9.1",
+    "webfonts-generator": "^0.4.0"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
-    "ember-cli": "~3.1.2",
+    "ember-cli": "~3.3.0",
     "ember-cli-dependency-checker": "^2.0.0",
     "ember-cli-eslint": "^4.2.1",
     "ember-cli-htmlbars": "^2.0.1",
