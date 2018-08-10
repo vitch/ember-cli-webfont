@@ -1,6 +1,6 @@
 # ember-cli-webfont
 
-This addon wraps [broccoli-webfont](https://github.com/sunflowerdeath/broccoli-webfont) to allow you to easily generate webfonts as part of your ember build process.
+This addon wraps [webfonts-generator](https://github.com/sunflowerdeath/webfonts-generator) to allow you to easily generate webfonts as part of your ember build process.
 
 ## Installation
 
@@ -18,7 +18,7 @@ To use the icons you just need to give an element these classes e.g.
 <span class="iconfont iconfont-ember"></span>
 ```
 
-Will display the SVG from `app/webfont-svg/ember.svg` (with the default values for `path`, `classPrefix` and `baseClass` - see below).
+Will display the SVG from `app/webfont-svg/ember.svg` (with the default values for `path`, `classPrefix` and `baseSelector` - see below).
 
 ## Configuration
 
@@ -32,18 +32,18 @@ var app = new EmberApp({
       files: ['**/*.svg'],
       dest: 'assets/webfonts/',
       fontName: 'iconfont',
-      cssFontsPath: 'webfonts/',
+      cssFontsUrl: 'webfonts/',
       cssTemplate: webfont.templates.css,
       templateOptions: {
         classPrefix: 'iconfont-',
-        baseClass: 'iconfont'
+        baseSelector: 'iconfont'
       }
     }
   }
 });
 ```
 
-Documentation on these options can be found on the [broccoli-webfont](https://github.com/sunflowerdeath/broccoli-webfont) and [webfonts-generator](https://github.com/sunflowerdeath/webfonts-generator#list-of-options) repositories.
+Documentation on these options can be found on the [webfonts-generator](https://github.com/sunflowerdeath/webfonts-generator#list-of-options) repository.
 
 # Developing addon
 
