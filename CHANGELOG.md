@@ -2,6 +2,12 @@
 
 ## Master
 
+## v1.0.0 2018-08-10
+
+ * Remove dependency from `broccoli-webfont` since it is no longer active
+ * Use newer `broccoli-caching-writer` to resolve deprecation warnings
+ * See #8 with thanks to @lsg-braymon
+
 ## v0.0.5 2017-05-23
  
  * Update `ember-cli` version and related changes from `ember init`
