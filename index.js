@@ -4,6 +4,7 @@ var Funnel = require('broccoli-funnel');
 var merge = require('merge');
 var MergeTrees = require('broccoli-merge-trees');
 var Webfont = require('./utils/webfont');
+var p = require('path');
 
 module.exports = {
   name: 'ember-cli-webfont',
@@ -48,7 +49,7 @@ module.exports = {
     // the addon or your app.
     var dummyWatchDir = 'vendor/';
     if (!this.isDevelopingAddon()) {
-      dummyWatchDir = 'node_modules/ember-cli-webfont/' + dummyWatchDir;
+      dummyWatchDir = p.join(__dirname, dummyWatchDir);
     }
     return new MergeTrees([dummyWatchDir, cssTree], { overwrite: true });
   },
