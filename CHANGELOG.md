@@ -2,6 +2,10 @@
 
 ## Master
 
+## v1.0.1 2018-10-05
+
+ * More robust location of directory (e.g. for yarn workspaces)
+
 ## v1.0.0 2018-08-10
 
  * Remove dependency from `broccoli-webfont` since it is no longer active
