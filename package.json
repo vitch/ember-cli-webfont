@@ -30,6 +30,7 @@
     "broccoli-merge-trees": "^3.0.0",
     "dirmatch": "^0.1.2",
     "ember-cli-babel": "^6.6.0",
+    "escape-string-regexp": "1.0.5",
     "merge": "^1.2.0",
     "underscore": "^1.9.1",
     "webfonts-generator": "^0.4.0"

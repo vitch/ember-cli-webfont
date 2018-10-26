@@ -5,6 +5,7 @@ var merge = require('merge');
 var MergeTrees = require('broccoli-merge-trees');
 var Webfont = require('./utils/webfont');
 var p = require('path');
+var escapeStringRegexp = require('escape-string-regexp');
 
 module.exports = {
   name: 'ember-cli-webfont',
@@ -40,7 +41,7 @@ module.exports = {
       }, this.options());
     const webfont = new Webfont([path], options);
     const cssTree = new Funnel(webfont, {
-      include: [new RegExp(/\.css$/)]
+      include: [new RegExp(escapeStringRegexp(options.cssDest) + '$')]
     });
 
     // Nasty way to deal with an error when there is no SVG files in the specified path
