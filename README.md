@@ -32,6 +32,7 @@ var app = new EmberApp({
       files: ['**/*.svg'],
       dest: 'assets/webfonts/',
       fontName: 'iconfont',
+      cssDest: 'temp/ember-cli-webfont.css',
       cssFontsUrl: 'webfonts/',
       cssTemplate: webfont.templates.css,
       templateOptions: {
@@ -44,6 +45,10 @@ var app = new EmberApp({
 ```
 
 Documentation on these options can be found on the [webfonts-generator](https://github.com/sunflowerdeath/webfonts-generator#list-of-options) repository.
+
+Additionally the `cssDest` option can go through some extra processing.
+If left out, the default value is `temp/ember-cli-webfont.css` and the resulting file will be imported into `vendor.css` automatically.
+Otherwise it has to be imported manually. The latter is useful when using `Sass`, `LESS`, or other CSS preprocessors.
 
 # Developing addon
 
