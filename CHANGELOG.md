@@ -2,6 +2,10 @@
 
 ## Master
 
+## v1.0.2 2018-11-06
+
+ * Compatibility with preprocessor files as templates
+
 ## v1.0.1 2018-10-05
 
  * More robust location of directory (e.g. for yarn workspaces)
