@@ -20,7 +20,7 @@ module.exports = {
       cssTemplate: Webfont.templates.css,
       templateOptions: {
         classPrefix: 'iconfont-',
-        baseSelector: 'iconfont'
+        baseSelector: '.iconfont'
       }
     }, webfontOptions.options || {});
   },
