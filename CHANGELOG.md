@@ -2,6 +2,10 @@
 
 ## Master
 
+## v1.0.3 2018-11-16
+
+ * Fix `baseSelector` to be a valid CSS selector
+
 ## v1.0.2 2018-11-06
 
  * Compatibility with preprocessor files as templates
@@ -15,6 +19,7 @@
  * Remove dependency from `broccoli-webfont` since it is no longer active
  * Use newer `broccoli-caching-writer` to resolve deprecation warnings
  * See #8 with thanks to @lsg-braymon
+ * Replace `baseClass` with `baseSelector`
 
 ## v0.0.5 2017-05-23
  
