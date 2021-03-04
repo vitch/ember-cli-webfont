@@ -29,7 +29,7 @@
     "broccoli-funnel": "^2.0.1",
     "broccoli-merge-trees": "^3.0.0",
     "dirmatch": "^0.1.2",
-    "ember-cli-babel": "^6.6.0",
+    "ember-cli-babel": "^7.23.1",
     "escape-string-regexp": "1.0.5",
     "merge": "^1.2.0",
     "underscore": "^1.9.1",
