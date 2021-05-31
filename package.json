@@ -24,7 +24,6 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
-    "broccoli": "1.1.4",
     "broccoli-caching-writer": "^3.0.3",
     "broccoli-funnel": "^2.0.1",
     "broccoli-merge-trees": "^3.0.0",
@@ -36,6 +35,7 @@
     "webfonts-generator": "^0.4.0"
   },
   "devDependencies": {
+    "broccoli": "1.1.4",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
     "ember-cli": "~3.3.0",
