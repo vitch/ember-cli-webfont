@@ -1,6 +1,6 @@
 # ember-cli-webfont
 
-This addon wraps [webfonts-generator](https://github.com/sunflowerdeath/webfonts-generator) to allow you to easily generate webfonts as part of your ember build process.
+This addon wraps [webfonts-generator](https://github.com/vusion/webfonts-generator) to allow you to easily generate webfonts as part of your ember build process.
 
 ## Installation
 
@@ -44,7 +44,7 @@ var app = new EmberApp({
 });
 ```
 
-Documentation on these options can be found on the [webfonts-generator](https://github.com/sunflowerdeath/webfonts-generator#list-of-options) repository.
+Documentation on these options can be found on the [webfonts-generator](https://github.com/vusion/webfonts-generator#list-of-options) repository.
 
 Additionally the `cssDest` option can go through some extra processing.
 If left out, the default value is `temp/ember-cli-webfont.css` and the resulting file will be imported into `vendor.css` automatically.
