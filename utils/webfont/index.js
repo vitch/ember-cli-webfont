@@ -1,7 +1,7 @@
 'use strict';
 
 const Plugin = require('broccoli-caching-writer')
-const webfontsGenerator = require('webfonts-generator');
+const webfontsGenerator = require('@vusion/webfonts-generator');
 const path = require('path');
 const dirmatch = require('dirmatch');
 const _ = require('underscore');
