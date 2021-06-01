@@ -12,6 +12,7 @@ addons:
   chrome: stable
 
 cache:
+  yarn: true
   directories:
     - $HOME/.npm
 
